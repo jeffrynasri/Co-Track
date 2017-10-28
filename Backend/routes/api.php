@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 
+Use App\Pengguna;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,3 +18,10 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('users', 'PenggunaController@index');
+Route::get('users/{pengguna}', 'PenggunaController@show');
+Route::post('users', 'PenggunaController@store');
+Route::put('users/{pengguna}', 'PenggunaController@update');
+Route::delete('users/{pengguna}', 'PenggunaController@delete');
+
