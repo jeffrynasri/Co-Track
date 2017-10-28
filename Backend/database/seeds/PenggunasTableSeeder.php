@@ -23,7 +23,11 @@ class PenggunasTableSeeder extends Seeder
                 'penggunas_alamat' => $faker->address,
                 'penggunas_email' => $faker->safeEmail,
                 'penggunas_no_hp' => $faker->phoneNumber,
-                'penggunas_state' => $faker->randomElement($array = array('berhenti','jalan','lari')),
+                'penggunas_state' => $faker->randomElement($array = [
+                    'berhenti',
+                    'jalan',
+                    'lari'
+                ]),
                 'penggunas_lat' => $faker->latitude($min = -90, $max = 90) ,
                 'penggunas_long' => $faker->longitude($min = -180, $max = 180),
             ]);
