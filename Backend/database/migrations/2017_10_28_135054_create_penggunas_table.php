@@ -17,8 +17,8 @@ class CreatePenggunasTable extends Migration
             $table->string('penggunas_dev_id')->primary();
             $table->string('penggunas_nama');
             $table->string('penggunas_alamat')->nullable();;
-            $table->string('email')->nullable();
-            $table->string('no_hp')->nullable();
+            $table->string('penggunas_email')->nullable();
+            $table->string('penggunas_no_hp')->nullable();
             $table->string('penggunas_lat');
             $table->string('penggunas_long');
         });
