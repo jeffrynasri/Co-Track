@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 
-Use App\Pengguna;
+use App\Pengguna;
 
 /*
 |--------------------------------------------------------------------------
