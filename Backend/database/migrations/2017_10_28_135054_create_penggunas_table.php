@@ -19,6 +19,7 @@ class CreatePenggunasTable extends Migration
             $table->string('penggunas_alamat')->nullable();;
             $table->string('penggunas_email')->nullable();
             $table->string('penggunas_no_hp')->nullable();
+            $table->string('penggunas_state')->nullable();
             $table->string('penggunas_lat')->nullable();
             $table->string('penggunas_long')->nullable();
         });
