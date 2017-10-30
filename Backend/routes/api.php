@@ -2,8 +2,6 @@
 
 use Illuminate\Http\Request;
 
-use App\Pengguna;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
