@@ -20,8 +20,8 @@ class CreatePenggunasTable extends Migration
             $table->string('penggunas_email')->nullable();
             $table->string('penggunas_no_hp')->nullable();
             $table->string('penggunas_state')->nullable();
-            $table->string('penggunas_lat')->nullable();
-            $table->string('penggunas_long')->nullable();
+            $table->double('penggunas_lat', 10,6)->nullable();
+            $table->double('penggunas_long', 10,6)->nullable();
         });
     }
 
