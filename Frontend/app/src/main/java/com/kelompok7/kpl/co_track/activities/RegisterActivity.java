@@ -1,7 +1,9 @@
-package com.kelompok7.kpl.co_track;
+package com.kelompok7.kpl.co_track.activities;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
+import com.kelompok7.kpl.co_track.R;
 
 public class RegisterActivity extends AppCompatActivity {
 
