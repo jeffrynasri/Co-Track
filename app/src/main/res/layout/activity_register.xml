@@ -27,7 +27,7 @@
             android:layout_marginBottom="@dimen/activity_vertical_margin"
             android:enabled="false"
             android:inputType="text"
-            android:text="10909209" />
+            />
     </LinearLayout>
 
     <LinearLayout
