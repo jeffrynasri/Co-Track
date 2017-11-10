@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Co-Track-KPL.iml" filepath="$PROJECT_DIR$/Co-Track-KPL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Co-Track.iml" filepath="$PROJECT_DIR$/Co-Track.iml" />
+      <module fileurl="file://C:\Users\Hendry\AndroidStudioProjects\Co-Track\Co-Track-KPL.iml" filepath="C:\Users\Hendry\AndroidStudioProjects\Co-Track\Co-Track-KPL.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
