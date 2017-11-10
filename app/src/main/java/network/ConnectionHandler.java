@@ -35,13 +35,12 @@ public class ConnectionHandler {
     HurlStack hurlStack;
     public static final int CONNECTION_TIMEOUT = 1000*90;
 
-    public static final String BASE_URL =  "https://trikarya.growth.co.id/",
+    public static final String BASE_URL =  "https://example.com/",
             response_message_success = "success",
             response_message_error = "error",
             response_data = "data",
             response_message = "message",
-            response_status = "status",
-            response_pagination = "pagination";;
+            response_status = "status";;
 
     public static int post_method = Request.Method.POST, get_method = Request.Method.GET;
     Context context;
@@ -53,8 +52,8 @@ public class ConnectionHandler {
             protected HttpURLConnection createConnection(URL url) throws IOException {
                 HttpsURLConnection httpsURLConnection = (HttpsURLConnection) super.createConnection(url);
                 try {
-                    httpsURLConnection.setSSLSocketFactory(getSSLSocketFactory());
-                    httpsURLConnection.setHostnameVerifier(HttpsURLConnection.getDefaultHostnameVerifier());
+                    //httpsURLConnection.setSSLSocketFactory(getSSLSocketFactory());
+                    //httpsURLConnection.setHostnameVerifier(HttpsURLConnection.getDefaultHostnameVerifier());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -63,51 +62,51 @@ public class ConnectionHandler {
         };
     }
 
-    private SSLSocketFactory getSSLSocketFactory()
-            throws CertificateException, KeyStoreException, IOException, NoSuchAlgorithmException, KeyManagementException {
-        CertificateFactory cf = CertificateFactory.getInstance("X.509");
-        InputStream caInput = context.getResources().openRawResource(R.raw.cert); // this cert file stored in \app\src\main\res\raw folder path
-
-        Certificate ca = cf.generateCertificate(caInput);
-        caInput.close();
-
-        KeyStore keyStore = KeyStore.getInstance("BKS");
-        keyStore.load(null, null);
-        keyStore.setCertificateEntry("ca", ca);
-
-        String tmfAlgorithm = TrustManagerFactory.getDefaultAlgorithm();
-        TrustManagerFactory tmf = TrustManagerFactory.getInstance(tmfAlgorithm);
-        tmf.init(keyStore);
-
-        TrustManager[] wrappedTrustManagers = getWrappedTrustManagers(tmf.getTrustManagers());
-
-        SSLContext sslContext = SSLContext.getInstance("TLS");
-        sslContext.init(null, wrappedTrustManagers, null);
-
-        return sslContext.getSocketFactory();
-    }
-    private TrustManager[] getWrappedTrustManagers(TrustManager[] trustManagers) {
-        final X509TrustManager originalTrustManager = (X509TrustManager) trustManagers[0];
-        return new TrustManager[]{
-                new X509TrustManager() {
-                    public X509Certificate[] getAcceptedIssuers() {
-                        return originalTrustManager.getAcceptedIssuers();
-                    }
-
-                    public void checkClientTrusted(X509Certificate[] certs, String authType) {
-                        try {
-                            originalTrustManager.checkClientTrusted(certs, authType);
-                        } catch (CertificateException ignored) {
-                        }
-                    }
-
-                    public void checkServerTrusted(X509Certificate[] certs, String authType) {
-                        try {
-                            originalTrustManager.checkServerTrusted(certs, authType);
-                        } catch (CertificateException ignored) {
-                        }
-                    }
-                }
-        };
-    }
+//    private SSLSocketFactory getSSLSocketFactory()
+//            throws CertificateException, KeyStoreException, IOException, NoSuchAlgorithmException, KeyManagementException {
+//        CertificateFactory cf = CertificateFactory.getInstance("X.509");
+//        InputStream caInput = context.getResources().openRawResource(R.raw.cert); // this cert file stored in \app\src\main\res\raw folder path
+//
+//        Certificate ca = cf.generateCertificate(caInput);
+//        caInput.close();
+//
+//        KeyStore keyStore = KeyStore.getInstance("BKS");
+//        keyStore.load(null, null);
+//        keyStore.setCertificateEntry("ca", ca);
+//
+//        String tmfAlgorithm = TrustManagerFactory.getDefaultAlgorithm();
+//        TrustManagerFactory tmf = TrustManagerFactory.getInstance(tmfAlgorithm);
+//        tmf.init(keyStore);
+//
+//        TrustManager[] wrappedTrustManagers = getWrappedTrustManagers(tmf.getTrustManagers());
+//
+//        SSLContext sslContext = SSLContext.getInstance("TLS");
+//        sslContext.init(null, wrappedTrustManagers, null);
+//
+//        return sslContext.getSocketFactory();
+//    }
+//    private TrustManager[] getWrappedTrustManagers(TrustManager[] trustManagers) {
+//        final X509TrustManager originalTrustManager = (X509TrustManager) trustManagers[0];
+//        return new TrustManager[]{
+//                new X509TrustManager() {
+//                    public X509Certificate[] getAcceptedIssuers() {
+//                        return originalTrustManager.getAcceptedIssuers();
+//                    }
+//
+//                    public void checkClientTrusted(X509Certificate[] certs, String authType) {
+//                        try {
+//                            originalTrustManager.checkClientTrusted(certs, authType);
+//                        } catch (CertificateException ignored) {
+//                        }
+//                    }
+//
+//                    public void checkServerTrusted(X509Certificate[] certs, String authType) {
+//                        try {
+//                            originalTrustManager.checkServerTrusted(certs, authType);
+//                        } catch (CertificateException ignored) {
+//                        }
+//                    }
+//                }
+//        };
+//    }
 }
